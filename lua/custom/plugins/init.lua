@@ -2,4 +2,14 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+
+  {
+    'stevearc/oil.nvim',
+    config = function()
+      require('oil').setup {
+        vim.keymap.set('n', '_', require('oil').open, { desc = 'open parent directory' }),
+      }
+    end,
+  },
+}
